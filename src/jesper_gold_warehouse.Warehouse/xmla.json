@@ -11,6 +11,61 @@
     },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
     "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "dim_survivor",
+        "sourceLineageTag": "[dims].[dim_survivor]",
+        "columns": [
+          {
+            "name": "survivor_key",
+            "dataType": "int64",
+            "sourceColumn": "survivor_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "survivor_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "survivor_ingame_name",
+            "dataType": "string",
+            "sourceColumn": "survivor_ingame_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "survivor_ingame_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_survivor",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dims"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
     "expressions": [
       {
         "name": "DatabaseQuery",
