@@ -13,6 +13,45 @@
     "sourceQueryCulture": "en-US",
     "tables": [
       {
+        "name": "dim_date",
+        "sourceLineageTag": "[dims].[dim_date]",
+        "columns": [
+          {
+            "name": "date_id",
+            "dataType": "int64",
+            "sourceColumn": "date_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "date_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_date",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dims"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "dim_survivor",
         "sourceLineageTag": "[dims].[dim_survivor]",
         "columns": [
