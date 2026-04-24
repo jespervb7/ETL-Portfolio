@@ -1,4 +1,30 @@
 CREATE TABLE [dims].[dim_date] (
 
-	[date_id] int NOT NULL
+	[date_key] int NULL, 
+	[date] date NOT NULL, 
+	[year] int NOT NULL, 
+	[quarter] int NOT NULL, 
+	[month] int NOT NULL, 
+	[month_name] varchar(20) NOT NULL, 
+	[month_short] varchar(3) NOT NULL, 
+	[day] int NOT NULL, 
+	[day_name] varchar(20) NOT NULL, 
+	[day_of_week] int NOT NULL, 
+	[day_of_year] int NOT NULL, 
+	[week_of_year] int NOT NULL, 
+	[week_start_date] date NOT NULL, 
+	[week_end_date] date NOT NULL, 
+	[month_start_date] date NULL, 
+	[month_end_date] date NOT NULL, 
+	[quarter_start_date] date NULL, 
+	[iso_year] int NOT NULL, 
+	[iso_week] int NOT NULL, 
+	[day_type] varchar(10) NOT NULL, 
+	[is_weekend] bit NOT NULL, 
+	[is_month_start] bit NOT NULL, 
+	[is_month_end] bit NOT NULL, 
+	[is_quarter_start] bit NOT NULL, 
+	[is_quarter_end] bit NOT NULL, 
+	[is_year_start] bit NOT NULL, 
+	[is_year_end] bit NOT NULL
 );

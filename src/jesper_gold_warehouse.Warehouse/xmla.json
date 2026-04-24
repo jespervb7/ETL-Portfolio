@@ -13,17 +13,470 @@
     "sourceQueryCulture": "en-US",
     "tables": [
       {
+        "name": "dim_addon",
+        "sourceLineageTag": "[dims].[dim_addon]",
+        "columns": [
+          {
+            "name": "addon_key",
+            "dataType": "int64",
+            "sourceColumn": "addon_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "addon_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "addon_ingame_name",
+            "dataType": "string",
+            "sourceColumn": "addon_ingame_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "addon_ingame_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "item_name",
+            "dataType": "string",
+            "sourceColumn": "item_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "item_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_addon",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dims"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "dim_date",
         "sourceLineageTag": "[dims].[dim_date]",
         "columns": [
           {
-            "name": "date_id",
+            "name": "date_key",
             "dataType": "int64",
-            "sourceColumn": "date_id",
+            "sourceColumn": "date_key",
             "formatString": "0",
             "sourceProviderType": "int",
-            "sourceLineageTag": "date_id",
+            "sourceLineageTag": "date_key",
             "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "year",
+            "dataType": "int64",
+            "sourceColumn": "year",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "year",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "quarter",
+            "dataType": "int64",
+            "sourceColumn": "quarter",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "quarter",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "month",
+            "dataType": "int64",
+            "sourceColumn": "month",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "month",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "month_name",
+            "dataType": "string",
+            "sourceColumn": "month_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "month_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "month_short",
+            "dataType": "string",
+            "sourceColumn": "month_short",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "month_short",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "day",
+            "dataType": "int64",
+            "sourceColumn": "day",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "day",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "day_name",
+            "dataType": "string",
+            "sourceColumn": "day_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "day_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "day_of_week",
+            "dataType": "int64",
+            "sourceColumn": "day_of_week",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "day_of_week",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "day_of_year",
+            "dataType": "int64",
+            "sourceColumn": "day_of_year",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "day_of_year",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "week_of_year",
+            "dataType": "int64",
+            "sourceColumn": "week_of_year",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "week_of_year",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "week_start_date",
+            "dataType": "dateTime",
+            "sourceColumn": "week_start_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "week_start_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "week_end_date",
+            "dataType": "dateTime",
+            "sourceColumn": "week_end_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "week_end_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "month_start_date",
+            "dataType": "dateTime",
+            "sourceColumn": "month_start_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "month_start_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "month_end_date",
+            "dataType": "dateTime",
+            "sourceColumn": "month_end_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "month_end_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "quarter_start_date",
+            "dataType": "dateTime",
+            "sourceColumn": "quarter_start_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "quarter_start_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "iso_year",
+            "dataType": "int64",
+            "sourceColumn": "iso_year",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "iso_year",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "iso_week",
+            "dataType": "int64",
+            "sourceColumn": "iso_week",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "iso_week",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "day_type",
+            "dataType": "string",
+            "sourceColumn": "day_type",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "day_type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_weekend",
+            "dataType": "boolean",
+            "sourceColumn": "is_weekend",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_weekend",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_month_start",
+            "dataType": "boolean",
+            "sourceColumn": "is_month_start",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_month_start",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_month_end",
+            "dataType": "boolean",
+            "sourceColumn": "is_month_end",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_month_end",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_quarter_start",
+            "dataType": "boolean",
+            "sourceColumn": "is_quarter_start",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_quarter_start",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_quarter_end",
+            "dataType": "boolean",
+            "sourceColumn": "is_quarter_end",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_quarter_end",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_year_start",
+            "dataType": "boolean",
+            "sourceColumn": "is_year_start",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_year_start",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_year_end",
+            "dataType": "boolean",
+            "sourceColumn": "is_year_end",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_year_end",
+            "summarizeBy": "none",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -39,6 +492,364 @@
             "source": {
               "type": "entity",
               "entityName": "dim_date",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dims"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dim_game_info",
+        "sourceLineageTag": "[dims].[dim_game_info]",
+        "columns": [
+          {
+            "name": "game_info_key",
+            "dataType": "int64",
+            "sourceColumn": "game_info_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "game_info_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "escaped_through_hatch",
+            "dataType": "boolean",
+            "sourceColumn": "escaped_through_hatch",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "escaped_through_hatch",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "did_killer_quit",
+            "dataType": "boolean",
+            "sourceColumn": "did_killer_quit",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "did_killer_quit",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "was_killer_farming",
+            "dataType": "boolean",
+            "sourceColumn": "was_killer_farming",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "was_killer_farming",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "did_game_have_cheater",
+            "dataType": "boolean",
+            "sourceColumn": "did_game_have_cheater",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "did_game_have_cheater",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "game_mode",
+            "dataType": "string",
+            "sourceColumn": "game_mode",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "game_mode",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "game_type",
+            "dataType": "string",
+            "sourceColumn": "game_type",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "game_type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "game_result",
+            "dataType": "string",
+            "sourceColumn": "game_result",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "game_result",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "did_escape",
+            "dataType": "boolean",
+            "sourceColumn": "did_escape",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "did_escape",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_valid_game",
+            "dataType": "boolean",
+            "sourceColumn": "is_valid_game",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_valid_game",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_game_info",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dims"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dim_item",
+        "sourceLineageTag": "[dims].[dim_item]",
+        "columns": [
+          {
+            "name": "item_key",
+            "dataType": "int64",
+            "sourceColumn": "item_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "item_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "item_ingame_name",
+            "dataType": "string",
+            "sourceColumn": "item_ingame_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "item_ingame_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "item_name",
+            "dataType": "string",
+            "sourceColumn": "item_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "item_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_item",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dims"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dim_killer",
+        "sourceLineageTag": "[dims].[dim_killer]",
+        "columns": [
+          {
+            "name": "killer_key",
+            "dataType": "int64",
+            "sourceColumn": "killer_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "killer_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "killer_ingame_name",
+            "dataType": "string",
+            "sourceColumn": "killer_ingame_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "killer_ingame_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_killer",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dims"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dim_map",
+        "sourceLineageTag": "[dims].[dim_map]",
+        "columns": [
+          {
+            "name": "map_key",
+            "dataType": "int64",
+            "sourceColumn": "map_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "map_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "map_ingame_name",
+            "dataType": "string",
+            "sourceColumn": "map_ingame_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "map_ingame_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "map_realm",
+            "dataType": "string",
+            "sourceColumn": "map_realm",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "map_realm",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dim_map",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dims"
             }
@@ -94,6 +905,225 @@
               "entityName": "dim_survivor",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dims"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "fact_games",
+        "sourceLineageTag": "[facts].[fact_games]",
+        "columns": [
+          {
+            "name": "survivor_key",
+            "dataType": "int64",
+            "sourceColumn": "survivor_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "survivor_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "killer_key",
+            "dataType": "int64",
+            "sourceColumn": "killer_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "killer_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "map_key",
+            "dataType": "int64",
+            "sourceColumn": "map_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "map_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "item_key",
+            "dataType": "int64",
+            "sourceColumn": "item_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "item_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "addon_key",
+            "dataType": "int64",
+            "sourceColumn": "addon_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "addon_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "game_info_key",
+            "dataType": "int64",
+            "sourceColumn": "game_info_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "game_info_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "personal_hook_stages",
+            "dataType": "int64",
+            "sourceColumn": "personal_hook_stages",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "personal_hook_stages",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "team_hook_stages",
+            "dataType": "int64",
+            "sourceColumn": "team_hook_stages",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "team_hook_stages",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "fresh_hooks",
+            "dataType": "int64",
+            "sourceColumn": "fresh_hooks",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "fresh_hooks",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "amount_of_survivors_escaped",
+            "dataType": "int64",
+            "sourceColumn": "amount_of_survivors_escaped",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "amount_of_survivors_escaped",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "generators_completed",
+            "dataType": "int64",
+            "sourceColumn": "generators_completed",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "generators_completed",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "blood_points",
+            "dataType": "int64",
+            "sourceColumn": "blood_points",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "blood_points",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "date_played_key",
+            "dataType": "int64",
+            "sourceColumn": "date_played_key",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "date_played_key",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "fact_games",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "facts"
             }
           }
         ],
