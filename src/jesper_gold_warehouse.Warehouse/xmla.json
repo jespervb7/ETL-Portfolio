@@ -774,6 +774,20 @@
                 "value": "Automatic"
               }
             ]
+          },
+          {
+            "name": "killer_image",
+            "dataType": "string",
+            "sourceColumn": "killer_image",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "killer_image",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           }
         ],
         "partitions": [

@@ -389,6 +389,7 @@ df_killers_selected = (
         .select(
             "k.killer_key",
             "k.killer_ingame_name",
+            "k.killer_image",
             "k.killer_id"
         )
 )

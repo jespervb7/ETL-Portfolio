@@ -7,7 +7,7 @@ shared games = let
   #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
   #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"game_id", type text}, {"survivor_id", type text}, {"map_id", type text}, {"killer_id", type text}, {"item_id", type text}, {"addon_id", type text}, {"date_game_played", type date}, {"time_game_started", type time}, {"time_game_ended", type time}, {"time_of_death", type time}, {"escaped_through_hatch", type text}, {"personal_hook_stages", Int64.Type}, {"team_hook_stages", Int64.Type}, {"fresh_hooks", Int64.Type}, {"amount_of_survivors_escaped", Int64.Type}, {"generators_completed", Int64.Type}, {"blood_points", Int64.Type}, {"did_killer_quit", type text}, {"was_killer_farming", type text}, {"did_game_have_cheater", type text}, {"game_mode", type text}, {"game_type", type text}}),
   #"Filtered rows" = Table.SelectRows(#"Changed column type", each [game_id] <> null and [game_id] <> ""),
-  #"Changed column type 1" = Table.TransformColumnTypes(#"Filtered rows", {{"escaped_through_hatch", type logical}, {"was_killer_farming", type logical}, {"did_killer_quit", type logical}, {"did_game_have_cheater", type logical}, {"personal_hook_stages", Int64.Type}, {"team_hook_stages", Int64.Type}, {"fresh_hooks", Int64.Type}, {"amount_of_survivors_escaped", Int64.Type}, {"generators_completed", Int64.Type}, {"blood_points", Int64.Type}})
+  #"Changed column type 1" = Table.TransformColumnTypes(#"Filtered rows", {{"escaped_through_hatch", type logical}, {"was_killer_farming", type logical}, {"did_killer_quit", type logical}, {"did_game_have_cheater", type logical}, {"personal_hook_stages", Int64.Type}, {"team_hook_stages", Int64.Type}, {"fresh_hooks", Int64.Type}, {"amount_of_survivors_escaped", Int64.Type}, {"generators_completed", Int64.Type}, {"blood_points", Int64.Type}, {"time_game_started", type time}})
 in
   #"Changed column type 1";
 [BindToDefaultDestination = true]
@@ -39,7 +39,7 @@ shared killers = let
   Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/1F4i1LoJVP8sCAxWBG-yeh64kvbeuu2XD-2Y34XvounA/edit?usp=drive_web&ouid=114517673615382305882"),
   #"Navigation 1" = Source{[name = "killers", ItemKind = "Table"]}[Data],
   #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
-  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"killer_id", type text}, {"killer_ingame_name", type text}})
+  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"killer_id", type text}, {"killer_ingame_name", type text}, {"killer_image", type text}, {"created_at", type datetime}, {"created_by", type text}})
 in
   #"Changed column type";
 [BindToDefaultDestination = true]
