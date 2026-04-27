@@ -1,0 +1,94 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Azure DevOps",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "Areas": {
+      "queryId": "e02f03c0-bd54-4583-90d6-f6bacd8d8d03",
+      "queryName": "Areas"
+    },
+    "BoardLocations": {
+      "queryId": "cd785f6f-cb9e-436d-bd2c-458bbff35309",
+      "queryName": "BoardLocations"
+    },
+    "Branches": {
+      "queryId": "192c20fa-0bdb-455f-902d-391dbfc7d1f3",
+      "queryName": "Branches"
+    },
+    "Dates": {
+      "queryId": "01e20588-cf53-4b76-a3cb-e951969d7eab",
+      "queryName": "Dates"
+    },
+    "Iterations": {
+      "queryId": "f302dc21-3deb-4b96-ba9e-04a6160c0786",
+      "queryName": "Iterations"
+    },
+    "Processes": {
+      "queryId": "e0f7ceba-fc42-46ec-9f0d-d8acf6a0f26b",
+      "queryName": "Processes"
+    },
+    "Projects": {
+      "queryId": "c37b9f37-371f-494a-8ac8-2390fcc602a4",
+      "queryName": "Projects"
+    },
+    "Tags": {
+      "queryId": "1b54c13b-61ed-4c8b-aefa-2ce6cc276e4f",
+      "queryName": "Tags"
+    },
+    "Teams": {
+      "queryId": "d65e0aad-b915-4ee2-a0b2-78f1cd874008",
+      "queryName": "Teams"
+    },
+    "Users": {
+      "queryId": "93e9fa20-bb00-4761-9e88-d21f672749d0",
+      "queryName": "Users"
+    },
+    "WorkItemBoardSnapshot": {
+      "queryId": "ef14f417-96ea-4ef3-8984-b8466dce69e0",
+      "queryName": "WorkItemBoardSnapshot"
+    },
+    "WorkItemLinks": {
+      "queryId": "64634595-740c-4e18-be13-519a87933c7d",
+      "queryName": "WorkItemLinks"
+    },
+    "WorkItemRevisions": {
+      "queryId": "2b3bc7ef-b2f3-40e1-960c-b8a327952c58",
+      "queryName": "WorkItemRevisions"
+    },
+    "WorkItems": {
+      "queryId": "d3da79ee-ec85-4b22-a06c-c0086be103a6",
+      "queryName": "WorkItems",
+      "loadEnabled": false
+    },
+    "WorkItemSnapshot": {
+      "queryId": "6019b276-954d-4b99-9624-d0ba885fe71b",
+      "queryName": "WorkItemSnapshot"
+    },
+    "WorkItemTypeFields": {
+      "queryId": "0a44d3f6-c6ed-4edc-8716-6322367ccc7a",
+      "queryName": "WorkItemTypeFields"
+    },
+    "WorkItems_DataDestination": {
+      "queryId": "b86831a4-696e-4318-b6ce-b916dd33f0da",
+      "queryName": "WorkItems_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://analytics.dev.azure.com/jespervanbeemdelust/Jesper%20data%20solutions/_odata/v3.0-preview",
+      "kind": "OData",
+      "connectionId": "{\"ClusterId\":\"55768579-e360-43a9-bc88-2f40c7ed9573\",\"DatasourceId\":\"0569573d-08f5-4aab-a8d0-6ced07d1cc07\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"55768579-e360-43a9-bc88-2f40c7ed9573\",\"DatasourceId\":\"ab49ca0e-4024-432c-9dfa-e8816bff65ad\"}"
+    }
+  ]
+}
