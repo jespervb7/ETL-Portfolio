@@ -7,7 +7,7 @@ Can be expanded to retrieve values from Key Vault or other sources
 """
 # START-EXAMPLE
 # import from fabric_cicd and azure.identity to pass-through service principal
-# from azure.identity import DefaultAzureCredential
+from azure.identity import AzureCliCredential
 from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan_items
 import argparse
 # import os
@@ -23,18 +23,19 @@ args = parser.parse_args()
 # Convert item_type_in_scope into a list
 allitems = args.ItemsInScope
 item_type_in_scope=allitems.split(",")
+
 print(item_type_in_scope)
 
 
-# Authenticate with DefaultAzureCredential authenticated by PowerShell
-# credential = DefaultAzureCredential()
+token_credential = AzureCliCredential()
 
 # Initialize the FabricWorkspace object with the required parameters
 target_workspace = FabricWorkspace(
     workspace_id= args.WorkspaceId,
     environment=args.Environment,
     repository_directory=args.RepositoryDirectory,
-    item_type_in_scope=item_type_in_scope,    
+    item_type_in_scope=item_type_in_scope,
+    token_credential=token_credential, 
 )
 
 # # # Publish all items defined in item_type_in_scope
