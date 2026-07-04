@@ -40,11 +40,11 @@ jobs:
           # Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset.
           python-version: 3.11
 
-      # Install fabric-cicd library
-      - name: Install fabric-cicd library
+      # Install deployment dependencies
+      - name: Install deployment dependencies
         run: |
             python -m pip install --upgrade pip
-            pip install fabric-cicd
+            pip install -r .\requirements.txt
 
       # Authenticate as Service Principal
       - name: Authenticate as Service Principal
@@ -60,6 +60,10 @@ jobs:
 
        # Run script to deploy with fabric-cicd to Test
       - name: Run script to deploy with fabric-cicd to Test
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         run: python .\scripts\auth_spn_secret_AzDo.py --WorkspaceId ${{vars.TestWorkspace}} --Environment "Test" --RepositoryDirectory ".\src" --ItemsInScope  ${{vars.ItemsInScope}}
           
   # Job to deploy to Test via fabric-cicd
@@ -82,11 +86,11 @@ jobs:
           # Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset.
           python-version: 3.11
 
-      # Install fabric-cicd library
-      - name: Install fabric-cicd library
+      # Install deployment dependencies
+      - name: Install deployment dependencies
         run: |
             python -m pip install --upgrade pip
-            pip install fabric-cicd
+            pip install -r .\requirements.txt
 
       # Authenticate as Service Principal
       - name: Authenticate as Service Principal
@@ -102,4 +106,8 @@ jobs:
 
        # Run script to deploy with fabric-cicd to Test
       - name: Run script to deploy with fabric-cicd to Prod
-        run: python auth_spn_secret_AzDo.py --WorkspaceId ${{vars.ProdWorkspace}} --Environment "Prod" --RepositoryDirectory ".\src" --ItemsInScope  ${{vars.ItemsInScope}}
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        run: python .\scripts\auth_spn_secret_AzDo.py --WorkspaceId ${{vars.ProdWorkspace}} --Environment "Prod" --RepositoryDirectory ".\src" --ItemsInScope  ${{vars.ItemsInScope}}
