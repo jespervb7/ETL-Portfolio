@@ -1,0 +1,89 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "2ae34c2b-bbbd-a4cd-4267-d71db0dbb708",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "executeMashupQueriesOnly": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Dead by Daylight",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "105ef6ce-82e2-a788-457c-c23d625e9235",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "executeMashupQueriesOnly": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 1,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Azure Devops",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "5de9e842-1c88-8536-48ab-f8c6e0fb3ae1",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "executeMashupQueriesOnly": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Movie Tracker",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "a085fae4-f9e0-9087-4352-b0726d43fc09",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "start_date": {
+              "value": "1900-01-01",
+              "type": "string"
+            },
+            "end_date": {
+              "value": "2100-01-01",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Date dimension",
+        "dependsOn": []
+      }
+    ]
+  }
+}
