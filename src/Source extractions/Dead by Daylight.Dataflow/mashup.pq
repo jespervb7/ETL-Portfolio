@@ -59,8 +59,9 @@ shared addons = let
 in
   #"Changed column type";
 shared DefaultDestination = let
-  Source = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false, HierarchicalNavigation = null]),
+  Source = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false, HierarchicalNavigation = true, EnableVorder = true, OutputMetadataRefresh = true]),
   #"Navigation 1" = Source{[workspaceId = "605b5796-17cb-4c40-a615-702a6726ae8c"]}[Data],
-  #"Navigation 2" = #"Navigation 1"{[lakehouseId = "fd9e9c25-32d5-4ecc-99ac-c5e050362b63"]}[Data]
+  #"Navigation 2" = #"Navigation 1"{[lakehouseId = "fd9e9c25-32d5-4ecc-99ac-c5e050362b63"]}[Data],
+  #"Navigation 3" = #"Navigation 2"{[Id = "dead_by_daylight", ItemKind = "Schema"]}[Data]
 in
-  #"Navigation 2";
+  #"Navigation 3";
