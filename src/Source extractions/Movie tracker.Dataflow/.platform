@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Lakehouse",
-    "displayName": "dead_by_daylight_bronze_lakehouse"
+    "type": "Dataflow",
+    "displayName": "Movie tracker"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "50362b63-c5e0-99ac-4ecc-32d5fd9e9c25"
+    "logicalId": "5de9e842-1c88-8536-48ab-f8c6e0fb3ae1"
   }
 }
