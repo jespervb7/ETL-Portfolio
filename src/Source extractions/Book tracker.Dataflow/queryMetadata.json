@@ -1,0 +1,44 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Book tracker",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "a2c05ae5-0ae6-44fa-9c57-88838ea0fb5b",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Reading log": {
+      "queryId": "326ea933-2fd3-4863-8194-64e84e9d57c0",
+      "queryName": "Reading log",
+      "loadEnabled": false
+    },
+    "Books": {
+      "queryId": "23fd3065-2dc3-4bd0-b076-8644fa73400c",
+      "queryName": "Books",
+      "loadEnabled": false
+    },
+    "Author": {
+      "queryId": "6851d87e-fd78-428b-b74f-16023a5134e3",
+      "queryName": "Author",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"55768579-e360-43a9-bc88-2f40c7ed9573\",\"DatasourceId\":\"ab49ca0e-4024-432c-9dfa-e8816bff65ad\"}"
+    },
+    {
+      "path": "https://docs.google.com/spreadsheets/d/1gOuRbYrLzW8HkroB7JAmXcfhqu1mkVU-RgtswyxTtcI/edit?gid=0#gid=0",
+      "kind": "GoogleSheets",
+      "connectionId": "{\"ClusterId\":\"55768579-e360-43a9-bc88-2f40c7ed9573\",\"DatasourceId\":\"82e8efb5-a785-4dcc-b5fa-e5084ab7a32b\"}"
+    }
+  ]
+}

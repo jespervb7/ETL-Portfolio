@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Book tracker"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "57dab144-4100-90d7-4d6f-c42ce388c4b7"
+  }
+}

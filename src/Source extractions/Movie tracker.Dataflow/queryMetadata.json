@@ -1,0 +1,64 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Movie tracker",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "44885b75-5c46-44d0-a367-55986d68676e",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "WatchLog": {
+      "queryId": "a5b06fa6-8af9-48e8-bbc8-c1ca9cb81ac9",
+      "queryName": "WatchLog",
+      "loadEnabled": false
+    },
+    "Media": {
+      "queryId": "2b7139a7-7898-42f9-a32b-13b3aa5063f5",
+      "queryName": "Media",
+      "loadEnabled": false
+    },
+    "Episodes": {
+      "queryId": "ac1eea70-c582-4501-b8ae-0e2f2d92942c",
+      "queryName": "Episodes",
+      "loadEnabled": false
+    },
+    "Genres": {
+      "queryId": "94f99f9b-6dd2-4072-9f96-3d3f1e97ec95",
+      "queryName": "Genres",
+      "loadEnabled": false
+    },
+    "Platforms": {
+      "queryId": "287c64e9-3c32-49df-bfab-d291d1e5252d",
+      "queryName": "Platforms",
+      "loadEnabled": false
+    },
+    "Tags": {
+      "queryId": "7a2123ad-118e-4fd3-b6df-3a6235b84534",
+      "queryName": "Tags",
+      "loadEnabled": false
+    },
+    "WatchCodes": {
+      "queryId": "f4a6e1e4-8cd8-45fc-9d94-c4c207705791",
+      "queryName": "WatchCodes",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"55768579-e360-43a9-bc88-2f40c7ed9573\",\"DatasourceId\":\"ab49ca0e-4024-432c-9dfa-e8816bff65ad\"}"
+    },
+    {
+      "path": "https://docs.google.com/spreadsheets/d/1gl5PX5LriVgDNF-oAaHHvyOrbYbmjwmrr0QAn4PEoMI/edit?gid=1599716855#gid=1599716855",
+      "kind": "GoogleSheets",
+      "connectionId": "{\"ClusterId\":\"55768579-e360-43a9-bc88-2f40c7ed9573\",\"DatasourceId\":\"31ccc7b5-a96f-4f61-af9c-9862e6bc56b8\"}"
+    }
+  ]
+}

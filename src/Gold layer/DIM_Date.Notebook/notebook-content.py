@@ -41,9 +41,7 @@ from com.microsoft.spark.fabric.Constants import Constants
 
 # Default start date
 start_date = "1900-01-01"
-
-# Default 10 years into the future from today
-end_date = (date.today().replace(year=date.today().year + 10)).isoformat()
+end_date = None
 
 # METADATA ********************
 
@@ -53,13 +51,6 @@ end_date = (date.today().replace(year=date.today().year + 10)).isoformat()
 # META }
 
 # CELL ********************
-
-# -----------------------------
-# CONFIGURATION
-# -----------------------------
-start_date = "1900-01-01"
-# 10 years into the future from today
-end_date = (date.today().replace(year=date.today().year + 10)).isoformat()
 
 # -----------------------------
 # BASE CALENDAR
