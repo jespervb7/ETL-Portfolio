@@ -9,55 +9,68 @@
   "queriesMetadata": {
     "Areas": {
       "queryId": "e02f03c0-bd54-4583-90d6-f6bacd8d8d03",
-      "queryName": "Areas"
+      "queryName": "Areas",
+      "loadEnabled": false
     },
     "BoardLocations": {
       "queryId": "cd785f6f-cb9e-436d-bd2c-458bbff35309",
-      "queryName": "BoardLocations"
+      "queryName": "BoardLocations",
+      "loadEnabled": false
     },
     "Branches": {
       "queryId": "192c20fa-0bdb-455f-902d-391dbfc7d1f3",
-      "queryName": "Branches"
+      "queryName": "Branches",
+      "loadEnabled": false
     },
     "Dates": {
       "queryId": "01e20588-cf53-4b76-a3cb-e951969d7eab",
-      "queryName": "Dates"
+      "queryName": "Dates",
+      "loadEnabled": false
     },
     "Iterations": {
       "queryId": "f302dc21-3deb-4b96-ba9e-04a6160c0786",
-      "queryName": "Iterations"
+      "queryName": "Iterations",
+      "loadEnabled": false
     },
     "Processes": {
       "queryId": "e0f7ceba-fc42-46ec-9f0d-d8acf6a0f26b",
-      "queryName": "Processes"
+      "queryName": "Processes",
+      "loadEnabled": false
     },
     "Projects": {
       "queryId": "c37b9f37-371f-494a-8ac8-2390fcc602a4",
-      "queryName": "Projects"
+      "queryName": "Projects",
+      "loadEnabled": false
     },
     "Tags": {
       "queryId": "1b54c13b-61ed-4c8b-aefa-2ce6cc276e4f",
-      "queryName": "Tags"
+      "queryName": "Tags",
+      "loadEnabled": false
     },
     "Teams": {
       "queryId": "d65e0aad-b915-4ee2-a0b2-78f1cd874008",
-      "queryName": "Teams"
+      "queryName": "Teams",
+      "loadEnabled": false
     },
     "Users": {
       "queryId": "93e9fa20-bb00-4761-9e88-d21f672749d0",
-      "queryName": "Users"
+      "queryName": "Users",
+      "loadEnabled": false
     },
     "WorkItemBoardSnapshot": {
       "queryId": "ef14f417-96ea-4ef3-8984-b8466dce69e0",
-      "queryName": "WorkItemBoardSnapshot"
+      "queryName": "WorkItemBoardSnapshot",
+      "loadEnabled": false
     },
     "WorkItemLinks": {
       "queryId": "64634595-740c-4e18-be13-519a87933c7d",
-      "queryName": "WorkItemLinks"
+      "queryName": "WorkItemLinks",
+      "loadEnabled": false
     },
     "WorkItemRevisions": {
       "queryId": "2b3bc7ef-b2f3-40e1-960c-b8a327952c58",
-      "queryName": "WorkItemRevisions"
+      "queryName": "WorkItemRevisions",
+      "loadEnabled": false
     },
     "WorkItems": {
       "queryId": "d3da79ee-ec85-4b22-a06c-c0086be103a6",
@@ -66,15 +79,23 @@
     },
     "WorkItemSnapshot": {
       "queryId": "6019b276-954d-4b99-9624-d0ba885fe71b",
-      "queryName": "WorkItemSnapshot"
+      "queryName": "WorkItemSnapshot",
+      "loadEnabled": false
     },
     "WorkItemTypeFields": {
       "queryId": "0a44d3f6-c6ed-4edc-8716-6322367ccc7a",
-      "queryName": "WorkItemTypeFields"
+      "queryName": "WorkItemTypeFields",
+      "loadEnabled": false
     },
     "WorkItems_DataDestination": {
       "queryId": "b86831a4-696e-4318-b6ce-b916dd33f0da",
       "queryName": "WorkItems_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "DefaultDestination": {
+      "queryId": "9cc5a899-32ac-4d72-8999-4cc809f0de60",
+      "queryName": "DefaultDestination",
       "isHidden": true,
       "loadEnabled": false
     }

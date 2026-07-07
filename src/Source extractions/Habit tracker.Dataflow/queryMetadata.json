@@ -1,0 +1,39 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Habit tracker",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "habit_log": {
+      "queryId": "205db95c-3646-46ea-9b88-5c73b07edc45",
+      "queryName": "habit_log",
+      "loadEnabled": false
+    },
+    "habits": {
+      "queryId": "8f2390b9-b0ff-41f8-8215-d6639ce8abe8",
+      "queryName": "habits",
+      "loadEnabled": false
+    },
+    "DefaultDestination": {
+      "queryId": "f51286ee-02d4-48ca-9523-168c691d760a",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"55768579-e360-43a9-bc88-2f40c7ed9573\",\"DatasourceId\":\"ab49ca0e-4024-432c-9dfa-e8816bff65ad\"}"
+    },
+    {
+      "path": "https://docs.google.com/spreadsheets/d/1E-lVFr-d16AfJt7vW92CHiFMwAWQ0oRbUgL7TDZTr9k/edit?gid=778429712#gid=778429712",
+      "kind": "GoogleSheets",
+      "connectionId": "{\"ClusterId\":\"55768579-e360-43a9-bc88-2f40c7ed9573\",\"DatasourceId\":\"589e138e-c738-4477-a676-a44b4848a214\"}"
+    }
+  ]
+}
