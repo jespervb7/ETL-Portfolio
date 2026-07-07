@@ -53,13 +53,6 @@ end_date = None
 # CELL ********************
 
 # -----------------------------
-# CONFIGURATION
-# -----------------------------
-start_date = "1900-01-01"
-# 10 years into the future from today
-end_date = (date.today().replace(year=date.today().year + 10)).isoformat()
-
-# -----------------------------
 # BASE CALENDAR
 # -----------------------------
 df_dim_date = spark.sql(f"""
