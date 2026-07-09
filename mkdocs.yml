@@ -1,0 +1,44 @@
+site_name: ETL Portfolio documentation
+site_url: https://sitename.example
+site_author: Jesper van Beemdelust
+site_description: >-
+  This is the documentation for the ETL Portfolio project. It contains information about the project, its structure, and how to use it.
+  
+# Repository
+repo_name: jespervb7/ETL-Portfolio
+repo_url: https://github.com/jespervb7/ETL-Portfolio
+
+theme:
+  features:
+    - navigation.footer
+    - navigation.top
+    - navigation.path
+    - navigation.tabs 
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono

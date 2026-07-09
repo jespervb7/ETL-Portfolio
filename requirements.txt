@@ -1,2 +1,0 @@
-fabric-cicd
-azure-identity
